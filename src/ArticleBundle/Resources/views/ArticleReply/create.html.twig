@@ -1,0 +1,6 @@
+{{ form_start(form, { action: path('api_rest_v1_article_reply_create', { article: article.id, _format: 'html' }) }) }}
+    {{ form_row(form.title) }}
+    {{ form_row(form.body) }}
+
+    <input type="submit" value="{{ 'Submit comment'|trans }}">
+{{ form_end(form) }}

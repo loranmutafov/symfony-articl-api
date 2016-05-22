@@ -1,0 +1,14 @@
+api_article:
+    type:     rest
+    resource: ArticleBundle\Api\ArticleController
+    prefix:   /articles
+
+api_articleReply:
+    type:     rest
+    resource: ArticleBundle\Api\ArticleReplyController
+    prefix:   /articles/{article}/reply
+
+api_articleRating:
+    type:     rest
+    resource: ArticleBundle\Api\ArticleRatingController
+    prefix:   /articles/{article}/rating

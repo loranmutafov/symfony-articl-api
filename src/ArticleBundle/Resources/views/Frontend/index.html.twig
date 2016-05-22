@@ -1,0 +1,20 @@
+{% extends 'ArticleBundle:Layout:layout.html.twig' %}
+
+{% block body %}
+    <h1>Hoja, friend</h1>
+
+    <p>No, that's not a real word. Should mean "Hi", I guess. Don't google it, because neither have I, and.. who knows these days.</p>
+
+    <p>Anyway! You're probably looking for that API. I've probably broken some REST rules by adding a few convenience links in the HTML version here and there, but that has all been solely for your comfort, user-experience-wise. Who in their right mind uses HTML APIs anyway. Speaking about UX, the design is brilliantly minimalistic, you could almost call it naked. Meaning there is no design - it's terrible and everything is floating everywhere. But I am sure you can find your way around it.</p>
+
+    <p>Said API can currently work with HTML, JSON and XML. Our team is working around-the-clock to implement your favourite flavour of formats as well.</p>
+
+    <p>&nbsp;</p>
+
+    <p>
+        Now please excuse the overly interesting intro, and enjoy your fresh dose of<br>
+        <strong><a href="{{ path('api_rest_v1_article_list') }}" style="color: violet;">API Sexiness 1.0</a></strong>
+    </p>
+
+    <p>Useless fact of the day: I <strong>actually</strong> named the project <strong>Articl</strong>.</p>
+{% endblock %}

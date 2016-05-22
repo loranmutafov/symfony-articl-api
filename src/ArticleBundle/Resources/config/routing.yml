@@ -1,0 +1,9 @@
+article_bundle:
+    type:     annotation
+    resource: "@ArticleBundle/Controller/"
+    prefix:   /
+
+article_rest:
+    type:     rest
+    prefix:   /api
+    resource: "@ArticleBundle/Resources/config/rest.yml"

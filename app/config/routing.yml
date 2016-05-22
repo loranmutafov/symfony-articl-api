@@ -1,0 +1,2 @@
+ArticleBundle:
+    resource: "@ArticleBundle/Resources/config/routing.yml"

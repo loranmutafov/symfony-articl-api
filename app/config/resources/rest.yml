@@ -1,0 +1,11 @@
+fos_rest:
+    routing_loader:
+        default_format: html
+    param_fetcher_listener: true
+    body_listener: true
+    format_listener:
+        enabled: true
+        rules:
+            - { path: '^/', priorities: ['html', 'json', 'xml'], fallback_format: 'html' }
+    view:
+        empty_content: HTTP_NO_CONTENT

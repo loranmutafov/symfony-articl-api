@@ -1,0 +1,17 @@
+<a href="{{ path('api_rest_v1_article_create', { _format: 'html' }) }}">{{ 'Create a new article'|trans }}</a>
+
+{% for article in articles %}
+    <a href="{{ path('api_rest_v1_article_get_article', { article: article.id, _format: 'html' }) }}">
+        <h2>{{ article.title }}</h2>
+    </a>
+    <p>{{ article.createdAt|date('d M, Y') }}</p>
+    {% if article.averageRating is not null %}
+        <p>{{ 'Rating'|trans }}: {{ article.averageRating }}</p>
+    {% else %}
+        <p>{{ 'No rating'|trans }}</p>
+    {% endif %}
+    <p>{{ 'Replies'|trans }}: {{ article.replies|length }}</p>
+{% else %}
+    <p>{{ 'Whaat, you have no articles'|trans }} :/</p>
+    <p>And whaat, why does the HTML version of the API output something even when there is no data.</p>
+{% endfor %}

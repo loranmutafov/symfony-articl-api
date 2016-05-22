@@ -1,0 +1,5 @@
+{{ form_start(form, { action: path('api_rest_v1_article_rating_create', { article: article.id, _format: 'html' }) }) }}
+    {{ form_row(form.rating) }}
+
+    <input type="submit" value="{{ 'Rate'|trans }}">
+{{ form_end(form) }}

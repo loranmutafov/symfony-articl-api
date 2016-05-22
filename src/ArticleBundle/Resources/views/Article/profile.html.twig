@@ -1,0 +1,30 @@
+<a href="{{ path('api_rest_v1_article_list', { _format: 'html' }) }}">Return to article list</a>
+
+<h2>{{ article.title }}</h2>
+<p>{{ article.createdAt|date('d M, Y') }}</p>
+{% if article.averageRating is not null %}
+    <p>{{ 'Rating'|trans }}: {{ article.averageRating }}</p>
+{% else %}
+    <p>{{ 'No rating'|trans }}</p>
+{% endif %}
+
+<div>{{ article.body|raw }}</div>
+
+<hr>
+
+<h3>{{ 'Rate article'|trans }}</h3>
+{{ render(path('api_rest_v1_article_rating_create', { article: article.id })) }}
+
+<hr>
+
+<h3>{{ 'Write a comment'|trans }}</h3>
+{{ render(path('api_rest_v1_article_reply_create', { article: article.id })) }}
+
+<h3>{{ 'Comments'|trans }}:</h3>
+{% for reply in article.replies %}
+    <h4>{{ reply.createdAt|date('d M, Y H:i:s') }}</h4>
+    <p><strong>{{ reply.title }}</strong></p>
+    <div>{{ reply.body|raw }}</div>
+{% else %}
+    {{ 'No comments'|trans }}
+{% endfor %}

@@ -1,0 +1,9 @@
+<a href="{{ path('api_rest_v1_article_list', { _format: 'html' }) }}">{{ 'Return to article list'|trans }}</a>
+
+<h2>{{ 'Create a new article'|trans }}</h2>
+{{ form_start(form) }}
+    {{ form_row(form.title) }}
+    {{ form_row(form.body) }}
+
+    <input type="submit" value="{{ 'Create'|trans }}">
+{{ form_end(form) }}
